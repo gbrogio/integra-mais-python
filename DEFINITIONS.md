@@ -5,9 +5,9 @@
 **Alunos:**
 
 - Guilherme Brogio – RA 166473-2024
-- Antonio Neto – RA (a preencher)
-- Leonardo Ribeiro – RA (a preencher)
-- Matheus Moreira – RA (a preencher)
+- Antonio Neto – RA 145287-2023
+- Leonardo Ribeiro – RA 152535-2023
+- Matheus Moreira – RA 183958-2024
 - Lucas Gabriel – RA (a preencher)
 
 **Parceiro/Cliente:**  
