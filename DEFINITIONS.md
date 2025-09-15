@@ -8,7 +8,7 @@
 - Antonio Neto – RA 145287-2023
 - Leonardo Ribeiro – RA 152535-2023
 - Matheus Moreira – RA 183958-2024
-- Lucas Gabriel – RA (a preencher)
+- Lucas Gabriel – RA 176052-2024
 
 **Parceiro/Cliente:**  
 Renan Sidnei Mulato Barroso – Personal Trainer
