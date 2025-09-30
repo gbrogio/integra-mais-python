@@ -1,0 +1,138 @@
+erDiagram
+    PERSONAL {
+        uuid id PK
+        string nome
+        string email
+        string password_hash
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    ALUNO {
+        uuid id PK
+        uuid personal_id FK
+        string nome
+        numeric altura_cm
+        int idade
+        text restricoes
+        date data_inicio_treino
+        int frequencia_semana
+        uuid plano_id FK
+        date plano_data_inicio
+        date plano_data_vencimento
+        string forma_pagamento
+        date data_pagamento
+        text observacoes
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    WEIGHT_RECORD {
+        uuid id PK
+        uuid aluno_id FK
+        date data
+        decimal peso_kg
+        text observacao
+        timestamp created_at
+    }
+
+    EXERCISE {
+        uuid id PK
+        string nome
+        text descricao
+        string tipo
+        numeric carga_padrao
+        int tempo_descanso_padrao
+        boolean ce
+        string grupo_muscular
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    SERIE {
+        uuid id PK
+        string nome
+        uuid aluno_id FK
+        date data_inicio
+        date data_termino
+        string status
+        int frequencia_semana
+        timestamp created_at
+    }
+
+    SERIE_EXERCISE {
+        uuid id PK
+        uuid serie_id FK
+        uuid exercise_id FK
+        int ordem
+        numeric carga
+        string repeticoes_json
+        string tipo
+        int tempo_descanso
+        text comentario
+        timestamp created_at
+    }
+
+    CARD_TREINO {
+        uuid id PK
+        uuid aluno_id FK
+        string nome
+        date data
+        string nota
+        timestamp created_at
+    }
+
+    CARD_EXERCISE {
+        uuid id PK
+        uuid card_id FK
+        uuid exercise_id FK
+        int ordem
+        numeric carga_atual
+        string reps_atual_json
+        int tempo_descanso_atual
+        timestamp created_at
+    }
+
+    PLANO {
+        uuid id PK
+        string nome
+        int duracao_meses
+        numeric preco
+        text descricao
+    }
+
+    PAGAMENTO {
+        uuid id PK
+        uuid aluno_id FK
+        uuid plano_id FK
+        numeric valor
+        string forma_pagamento
+        date data_pagamento
+        string status
+        string transacao_id
+    }
+
+    AUDIT_LOG {
+        uuid id PK
+        string entity_type
+        uuid entity_id
+        string action
+        string who
+        timestamp timestamp
+        string old_value_json
+        string new_value_json
+    }
+
+    %% Relationships
+    ALUNO }o--|| PERSONAL : "personal_id > id"
+    ALUNO }o--|| PLANO : "plano_id > id"
+    WEIGHT_RECORD }o--|| ALUNO : "aluno_id > id"
+    SERIE }o--|| ALUNO : "aluno_id > id"
+    SERIE_EXERCISE }o--|| SERIE : "serie_id > id"
+    SERIE_EXERCISE }o--|| EXERCISE : "exercise_id > id"
+    CARD_TREINO }o--|| ALUNO : "aluno_id > id"
+    CARD_EXERCISE }o--|| CARD_TREINO : "card_id > id"
+    CARD_EXERCISE }o--|| EXERCISE : "exercise_id > id"
+    PAGAMENTO }o--|| ALUNO : "aluno_id > id"
+    PAGAMENTO }o--|| PLANO : "plano_id > id"
+    AUDIT_LOG }o--|| ALUNO : "entity_id > id"
