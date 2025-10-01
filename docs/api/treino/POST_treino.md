@@ -83,8 +83,7 @@ Registrar em audit_log os campos criados (old_value_json = null, new_value_json 
 
 ### Cabeçalhos:
 
-Location: /api/treinos/{id}
-
 ```
+Location: /api/treinos/{id}
 
 ```
