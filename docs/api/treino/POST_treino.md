@@ -64,8 +64,10 @@ Registrar em audit_log os campos criados (old_value_json = null, new_value_json 
 
 ### Erros comuns:
 
-*400 Bad Request: campo obrigatório ausente ou inválido (ex: "nome" é obrigatório).
-*404 Not Found: aluno_id não encontrado.
+\*400 Bad Request: campo obrigatório ausente ou inválido (ex: "nome" é obrigatório).
+
+\*404 Not Found: aluno_id não encontrado.
+
 \*403 Forbidden: O aluno não pertence ao personal que fez a requisição.
 
 ### Resposta de Sucesso (201 Created).
